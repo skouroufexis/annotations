@@ -1,7 +1,9 @@
 # Project Outline
 
 Frontend: ReactJS
+
 Backend: Django
+
 Database: PostgreSql
 
 # Database setup
