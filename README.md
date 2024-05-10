@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Project Outline
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend: ReactJS
+Backend: Django
+Database: PostgreSql
 
-## Available Scripts
+# Database setup
+Database can be set up in the **settings.py** file. Following is the setup for PostgreSql
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Database Name'
+        'USER': 'username',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
+```
+# Routes
+>/uploadFile/
 
-In the project directory, you can run:
+Uploads Image to Database. POST method
 
-### `npm start`
+>/getFiles/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Retrieves all image records from Database. GET method
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+>/deleteFile/
 
-### `npm test`
+Deletes a single record from database based on record id. POST method
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+>/updateFile/
 
-### `npm run build`
+Modifies a single record in the database. POST method
+    
+# Python version
+The project uses python 3
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Migrations
+Before running the server, make the migrations by running:
+>python manage.py makemigrations
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+and
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+>python manage.py migrate
 
-### `npm run eject`
+# Activate virtual environment
+Before running the server, activate the virtual environment by running
+>source venv/bin/activate
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Start the React server
+On the root directory run
+>npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Start the backend server
+From the root directory navigate to venv/backend. Then run:
+>python manage.py runserver
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Application url
+The application runs on http://localhost:3000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
