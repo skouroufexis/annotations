@@ -12,9 +12,9 @@ Database can be set up in the **settings.py** file. Following is the setup for P
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Database Name'
-        'USER': 'username',
-        'PASSWORD': 'password',
+        'NAME': 'your Database's Name'
+        'USER': 'your username',
+        'PASSWORD': 'your password',
         'HOST': 'localhost',
         'PORT': '5432'
     }
